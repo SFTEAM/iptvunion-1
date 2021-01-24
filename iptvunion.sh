@@ -20,7 +20,7 @@ read -p "Please enter a password for your MySQL : " mysqlpassword
 (mysql -uroot -p$mysqlpassword -e "CREATE DATABASE phpmyadmin"  2> /dev/null);
 echo -n "1. [password for your MySQL:] "
 echo -n " [############"
-RESULT=`mysqlshow --user=root --password=$mysqlpassword mysql | grep -v Wildcard | grep -o mysql `
+RESULT=`mysqlshow --user=ubuntu --password=$mysqlpassword mysql | grep -v Wildcard | grep -o mysql `
 if [ "$RESULT" == "mysql" ]; then 
 echo -e "]$(tput setaf 2)Successful$(tput sgr0)"
 sleep 2
